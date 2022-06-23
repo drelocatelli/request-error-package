@@ -1,50 +1,46 @@
 {
-    "name": "request-error",
-    "version": "1.0.3",
-    "main": "dist/cjs/index.js",
-    "module": "dist/esm/index.js",
-    "files": [
-      "dist"
+  "name": "request-error",
+  "version": "1.0.4",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rm -rf ./dist && rollup -c",
+    "build-tsc": "rm -rf dist/ && npm run build:esm && npm run build:cjs && npm run build:css-copy",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module CommonJS --outDir dist/cjs"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
     ],
-    "dependencies": {
-      "rollup-plugin-scss": "^3.0.0",
-      "styled-components": "^5.3.5"
-    },
-    "scripts": {
-      "build": "rm -rf ./dist && rollup -c",
-      "build-tsc": "rm -rf dist/ && npm run build:esm && npm run build:cjs && npm run build:css-copy",
-      "build:esm": "tsc",
-      "build:cjs": "tsc --module CommonJS --outDir dist/cjs"
-    },
-    "eslintConfig": {
-      "extends": [
-        "react-app",
-        "react-app/jest"
-      ]
-    },
-    "browserslist": {
-      "production": [
-        ">0.2%",
-        "not dead",
-        "not op_mini all"
-      ],
-      "development": [
-        "last 1 chrome version",
-        "last 1 firefox version",
-        "last 1 safari version"
-      ]
-    },
-    "devDependencies": {
-      "@testing-library/jest-dom": "^5.16.4",
-      "@testing-library/user-event": "^13.5.0",
-      "@types/jest": "^27.5.2",
-      "@types/node": "^16.11.38",
-      "rollup-plugin-import-css": "^3.0.3",
-      "rollup-plugin-postcss": "^4.0.2",
-      "rollup-plugin-sass": "^1.2.12",
-      "rollup-plugin-typescript2": "^0.32.0",
-      "typescript": "^4.7.3",
-      "web-vitals": "^2.1.4",
-      "webpack-cli": "^4.9.2"
-    }
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.11.38",
+    "rollup-plugin-import-css": "^3.0.3",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-sass": "^1.2.12",
+    "rollup-plugin-typescript2": "^0.32.1",
+    "typescript": "^4.7.3",
+    "web-vitals": "^2.1.4",
+    "webpack-cli": "^4.9.2"
   }
+}
